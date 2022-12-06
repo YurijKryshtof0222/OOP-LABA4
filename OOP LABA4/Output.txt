@@ -1,0 +1,6 @@
+Circle: { radius = 5, length = 31, area = 78};
+Right triangle: { a = 12.5, b = 14.3, c = 18.9932, rectangle perimeter = 53.6, area = 89.375};
+Right triangle in a circle: {
+	Right triangle: { a = 6, b = 8, c = 10, rectangle perimeter = 28, area = 24};
+	Circle: { radius = 1, length = 6, area = 3};
+}

@@ -68,7 +68,7 @@ inline void RightTriangle<T>::printProperties(const char* filename)
 
 	if (fout.is_open())
 	{
-		fout << "RightTriangle: "
+		fout << "Right triangle: "
 			<< "{ a = " << katet1
 			<< ", b = " << katet2
 			<< ", c = " << getHypotenuse()

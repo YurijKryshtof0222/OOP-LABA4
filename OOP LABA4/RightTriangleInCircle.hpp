@@ -7,7 +7,6 @@
 #include <math.h>
 #include <iostream>
 #include <fstream>
-#include <thread>
 
 template <class T>
 inline RightTriangleInCircle<T>::RightTriangleInCircle(T katet1, T katet2) :
@@ -22,6 +21,7 @@ inline T RightTriangleInCircle<T>::getRadius()
     return RightTriangle<T>::getHypotenuse() / 2;
 }
 
+//Не можна змінювати власноруч радіус. Бо діаметр кола - гіпотенуза прямокутного трикутника, вписанного у коло. 
 template<class T>
 inline void RightTriangleInCircle<T>::setRadius()
 {
@@ -35,15 +35,22 @@ inline void RightTriangleInCircle<T>::printProperties(const char* filename)
 
 	if (fout.is_open())
 	{
+
 		fout << "Right triangle in a circle: {\n\t";
 
-		std::thread th(&RightTriangle<T>::printProperties, filename);
-		th.join();
+		fout << "Right triangle: "
+			<< "{ a = " << RightTriangle<T>::getKatet1()
+			<< ", b = " << RightTriangle<T>::getKatet2()
+			<< ", c = " << RightTriangle<T>::getHypotenuse()
+			<< ", rectangle perimeter = " << RightTriangle<T>::getRectanglePerimeter()
+			<< ", area = " << RightTriangle<T>::getTriangleArea()
+			<< "};\n\t";
 
-		fout << "\t";
-
-		std::thread th1(&Circle<T>::printProperties, filename);
-		th1.join();
+		fout << "Circle: "
+			<< "{ radius = " << Circle<T>::getRadius()
+			<< ", length = " << Circle<T>::getLength()
+			<< ", area = " << Circle<T>::getCircleArea()
+			<< "};\n";
 
 		fout << "}";
 	}

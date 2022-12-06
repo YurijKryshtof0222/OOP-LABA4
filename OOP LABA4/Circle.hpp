@@ -5,7 +5,7 @@
 #include <fstream>
 #include "Circle.h"
 
-//Заглушка яка потрібна для класу RightTriangleCircle, яка від цього класу наслідується
+//"Заглушка", яка потрібна для класу RightTriangleCircle, яка від цього класу наслідується.
 template<class T>
 inline Circle<T>::Circle()
 {
